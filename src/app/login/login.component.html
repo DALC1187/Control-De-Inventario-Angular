@@ -1,0 +1,48 @@
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-faded" style="background-color: black;">
+  <h1 class="navbar-brand mb-0" style="color: white">Control de inventarios</h1>
+</nav>
+<br>
+<div class="container">
+
+  <div class="card" >
+    <div class="card-block">
+
+      <div style="text-align: center">
+        <h4 class="card-title">Iniciar sesión</h4>
+        <img src="assets/logo.png" style="width: 30%;">
+      </div>
+
+
+
+      <div >
+        <form [formGroup]="formulario">
+          <div class="form-group">
+            <label for="correo">Correo Electrónico</label>
+            <input formControlName="email" type="email" class="form-control" id="correo" placeholder="Correo Electrónico">
+          </div>
+          <div class="form-group">
+            <label for="contra">Contraseña</label>
+            <input formControlName="password" type="password" class="form-control" id="contra" placeholder="Contraseña">
+
+
+
+          </div>
+
+
+          <button type="button" (click)="onSubmit()" class="btn btn-primary w-100" style="background-color: #9e1514; border-color: #9e1514" [disabled]="formulario.invalid">Iniciar sesión</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <ngb-alert #staticAlert *ngIf="message" type="danger"
+  >{{ message }}
+  </ngb-alert>
+</div>
+
+
+
